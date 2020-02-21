@@ -48,15 +48,15 @@ xlabel('Timeline');
 grid on
 
 
-test_size = int16(0.3*data_size); %proportion of dataset to be used as test set
+test_size = int16(0.3*data_size); 
 train_size=data_size-test_size;
 
 %split data into train and test 
 train_set=StockData_TimeTable(1:train_size,"Close");
 test_set=StockData_TimeTable(train_size+1:end,"Close");
 
-train_reshape=reshape(train_set.Close, [],1); %respae it to one column
-train_scaled=rescale(train_reshape); %tried to do minmaxscaler, reshape it to range(0,1)
+train_reshape=reshape(train_set.Close, [],1);
+train_scaled=rescale(train_reshape); 
 
 x_train=cell(length(train_scaled)-N+1,1);
 
@@ -79,7 +79,7 @@ end
 y_test=test_scaled(N:end);
 
 
-inputSize = N; %because N is 9
+inputSize = N; 
 numHiddenUnits = 100;
 numClasses = 1;
 
